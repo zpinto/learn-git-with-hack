@@ -88,3 +88,59 @@
 ```
 > git push -u origin master
 ```
+
+### Pushing
+
+- Pushes code to the remote repository
+
+```
+git push
+```
+
+### Pulling
+
+- Pulls any new changes from your repository
+
+```
+git pull
+```
+
+### Branching
+
+#### Creating a branch
+
+- Creates a new branch based off of the latest commit of the branch that you are branching from
+
+```
+git branch <my_branch_name>
+```
+
+#### Checking out that branch
+
+- Switches you to the branch that you select
+
+```
+git checkout <my_branch_name>
+```
+
+### Merging
+
+- Merges the selected branch onto the one that you are currently on
+
+```
+git merge <my_branch_name>
+```
+
+### Logs
+
+- Log of all of the commits, merges, etc.
+
+```
+git log
+```
+
+## Additional Material
+
+[Git Cheat Sheet](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf)
+[Becomming a Git Pro](https://itnext.io/become-a-git-pro-in-just-one-blog-a-thorough-guide-to-git-architecture-and-command-line-interface-93fbe9bdb395)
+[A Simple Git Guide](https://rogerdudler.github.io/git-guide/)
