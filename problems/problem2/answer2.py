@@ -5,4 +5,4 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        return 0
+        return None
