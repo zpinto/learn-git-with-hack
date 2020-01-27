@@ -48,7 +48,7 @@ Check out the Table of Contents below to simply look for descriptions and explan
 - [Branching](#branching)
 - [Merging](#merging)
 - [Merge Conflicts](#merge-conflicts)
-- [The 3 Git States](#the-3-git-states:)
+- [The 3 Git States](#the-3-git-states)
 
 ### Repository
 
@@ -74,15 +74,15 @@ When merging, there is a chance that another programmer has made changes to some
 
 #### Modified
 
-    This is the state that contains all of the files that have been modified since the last commit. This may include new files that are not yet being tracked by git or files that are being tracked and have some kind of changes. To commit these changes, they first need to be added to the staging area using the git add command.
+This is the state that contains all of the files that have been modified since the last commit. This may include new files that are not yet being tracked by git or files that are being tracked and have some kind of changes. To commit these changes, they first need to be added to the staging area using the git add command.
 
 #### Staging
 
-    This is the state that determines all of the changes that will be included in the next commit. This is essentially like packing a box of desired contents before you ship it. When you are ready to ship the box, you use the command git commit.
+This is the state that determines all of the changes that will be included in the next commit. This is essentially like packing a box of desired contents before you ship it. When you are ready to ship the box, you use the command git commit.
 
 #### Committed
 
-    Committed files are a grouping of changes applied and associated with a message that explains the intent of the changes. You can think of a commit as a building block. Each commit gets stacked on top of all of the previous commits to build the current version of the project. These commits can be used to revert to old versions and look back to changes made in the past.
+Committed files are a grouping of changes applied and associated with a message that explains the intent of the changes. You can think of a commit as a building block. Each commit gets stacked on top of all of the previous commits to build the current version of the project. These commits can be used to revert to old versions and look back to changes made in the past.
 
 ## Git Commands
 
