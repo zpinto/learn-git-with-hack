@@ -246,7 +246,7 @@ In this tutorial, we are going to:
 
 - [Setup](#setup)
 - [Clone the repo](#step-1-clone-the-repo)
-- [Remove the .git directory](#step-2-remove-the-.git-directory)
+- [Remove the .git directory](#step-2-remove-the-git-directory)
 - [Initialize your git repository](#step-3-initialize-your-git-repository)
 - [Add and commit the current files in the project](#step-4-add-and-commit-the-current-files-in-the-project)
 - [Setting up a remote Github repository](#step-5-setting-up-a-remote-github-repository)
