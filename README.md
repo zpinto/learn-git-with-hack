@@ -39,7 +39,7 @@ Check out the Table of Contents below to simply look for descriptions and explan
 
 ```
 > git config --global user.name “Your name”
-> git config --global user.email “youremail@somehting.com”
+> git config --global user.email “youremail@something.com”
 ```
 
 ## Git Principles
@@ -242,6 +242,19 @@ In this tutorial, we are going to:
 - Merge that branch to master
 - And push to Github
 
+### Steps
+
+- [Setup](#setup)
+- [Clone the repo](#step-1-clone-the-repo)
+- [Remove the .git directory](#step-2-remove-the-.git-directory)
+- [Initialize your git repository](#step-3-initialize-your-git-repository)
+- [Add and commit the current files in the project](#step-4-add-and-commit-the-current-files-in-the-project)
+- [Setting up a remote Github repository](#step-5-setting-up-a-remote-github-repository)
+- [Creating and checking out to a branch](#step-6-creating-and-checking-out-to-a-branch)
+- [Making commits on that branch](#step-7-making-commits-on-that-branch)
+- [Merging that branch and pushing to remote](#step-8-merging-that-branch-and-pushing-to-remote)
+- [You did it!!!](#you-did-it)
+
 ### Setup
 
 If you have not already, please follow the instructions [here](#setting-git-up)!
@@ -367,7 +380,7 @@ If you have not already, please follow the instructions [here](#setting-git-up)!
 - Run tester1.py to check your answer
 
 ```
-python3 tester1.py
+python tester1.py
 ```
 
 <img src='http://g.recordit.co/Cj1dHs5OuA.gif' title='Answer the question' width='' alt='Answer the question' />
@@ -410,7 +423,7 @@ python3 tester1.py
 
 <img src='http://g.recordit.co/s1W77KYW1X.gif' title='Merge and push' width='' alt='Merge and push' />
 
-### We did it!!!
+### You did it!!!
 
 There is much more to learn about git, but you should now have a better understanding of some of the most popular and useful aspects of git.
 
