@@ -88,32 +88,142 @@ Committed files are a grouping of changes applied and associated with a message 
 
 ### git clone
 
+- Clone will go to the URL provided and copy the git repository located at this link
+- The link typically refers to a Github repository
+
+```
+> git clone <repo_url>
+```
+
 ### git init
+
+- Init will initialize a new git repository by creating a .git directory that will be used for holding all the git related information about the project you are working on
+- This command is typically used at the start of the project
+
+```
+> git init
+```
 
 ### git status
 
+- Status gives you information about what files are tracked and un-tracked
+- Also lists which of the [3 states](#the-3-git-stages) your changed files are in
+
+```
+> git status
+```
+
 ### git add
+
+- Add will move files from the [modified state](#modified) to the [staging state](#staging)
+
+- You can add all files in the current directory and subdirectories to the staging state by executing the following command
+
+```
+> git add .
+```
+
+- You can add just one file to the staging state by executing the following command
+
+```
+> git add <path_to_file>
+```
 
 ### git commit
 
+- Commit will move files from the [staging state](#staging) to the [committed state](#committed)
+- Remember to associate a message with your commit so that you and your fellow programmers know the purpose of the commit's changes
+
+```
+> git commit -m "<message_explaining_changes>"
+```
+
+### git remote add
+
+- Remote is the location of your non-local repository
+- Click [here](#remote) to read about what remote is in the [git principles](#git-principles) section
+- Remote add is the command that allows you to tell git where you want your repository to live not on your computer
+- You would do this so that you could work on the same project with multiple people
+
+- To add a remote location, execute the following command
+  - When adding a remote location, we create a name for it (kinda like a variable name for the url)
+  - The convention is to call our main remote location "origin"
+
+```
+> git remote add origin <url_of_remote_repo>
+```
+
 ### git pull
+
+- Pull will get all of the changes made to the current branch of the remote repository and add them to your local repository
+- These changes may have been made by your fellow team members
+
+```
+> git pull
+```
 
 ### git push
 
+- Push will push all of the local changes that you have committed to a [branch](#branching) to the remote branch of the repository
+- You would do this so that you could share the changes you made with your team members
+
+```
+> git push
+```
+
+- Note: When pushing to your remote branch for the first time, you will have to execute
+  - The -u stands for upstream
+  - "origin" is the upstream location that is associated with the remote location of the repository
+
+```
+> git push -u origin <branch_name>
+```
+
 ### git branch
+
+- Branch will create a new branch with the given name
+- Click [here](#branching) to read about what branching is in the [git principles](#git-principles) section
+
+```
+> git branch <new_branch_name>
+```
 
 ### git checkout
 
+- Checkout will switch you to the given branch
+- You will now be able to make changes and commits to the switched to branch
+
+```
+> git checkout <branch_name>
+```
+
 ### git merge
 
+- Merge will allow you to apply the commits on the selected branch to the current branch
+- Click [here](#merging) to read about what merging is in the [git principles](#git-principles) section
+
+```
+> git merge <branch_to_merge>
+```
+
 ### git log
+
+- Log will show a lits of all of the commits made to the current branch in chronological order
+  - You can continue pressing the enter key to continue down the list
+  - You can press the q key to exit
+
+```
+git log
+```
 
 ## Tutorial
 
 ### Clone this repo
 
 ```
+
 > git clone https://github.com/zpinto/learn-git-with-hack.git
+
 ```
 
 ### Make your own repo
@@ -121,15 +231,19 @@ Committed files are a grouping of changes applied and associated with a message 
 - Rename the directory and remove the .git directory inside your new project
 
 ```
+
 > mv learn-git-with-hack <learn-git-yourname>
 > cd <learn-git-yourname>
 > rm -rf .git
+
 ```
 
 - Initialize your new git repository
 
 ```
+
 > git init
+
 ```
 
 ## Important Commands
@@ -139,7 +253,9 @@ Committed files are a grouping of changes applied and associated with a message 
 - Gives you information about what files are staged and which ones are not
 
 ```
+
 > git status
+
 ```
 
 ### Staging
@@ -147,7 +263,9 @@ Committed files are a grouping of changes applied and associated with a message 
 - You must stage your files in order to commit and save changes
 
 ```
+
 > git add <file_name>
+
 ```
 
 ### Committing
@@ -156,7 +274,9 @@ Committed files are a grouping of changes applied and associated with a message 
 - Allows you to save a snapshot of the changes that you made
 
 ```
+
 > git commit -m “my commit message”
+
 ```
 
 ### Setting Remote Origin
@@ -167,13 +287,17 @@ Committed files are a grouping of changes applied and associated with a message 
 #### Sets your repos remote origin
 
 ```
+
 > git remote add origin <url-of-your-repo>
+
 ```
 
 #### Pushes your commits from local master to remote master
 
 ```
+
 > git push -u origin master
+
 ```
 
 ### Pushing
@@ -181,7 +305,9 @@ Committed files are a grouping of changes applied and associated with a message 
 - Pushes code to the remote repository
 
 ```
+
 git push
+
 ```
 
 ### Pulling
@@ -189,7 +315,9 @@ git push
 - Pulls any new changes from your repository
 
 ```
+
 git pull
+
 ```
 
 ### Branching
@@ -199,7 +327,9 @@ git pull
 - Creates a new branch based off of the latest commit of the branch that you are branching from
 
 ```
+
 git branch <my_branch_name>
+
 ```
 
 #### Checking out that branch
@@ -207,7 +337,9 @@ git branch <my_branch_name>
 - Switches you to the branch that you select
 
 ```
+
 git checkout <my_branch_name>
+
 ```
 
 ### Merging
@@ -215,7 +347,9 @@ git checkout <my_branch_name>
 - Merges the selected branch onto the one that you are currently on
 
 ```
+
 git merge <my_branch_name>
+
 ```
 
 ### Logs
@@ -223,7 +357,9 @@ git merge <my_branch_name>
 - Log of all of the commits, merges, etc.
 
 ```
+
 git log
+
 ```
 
 ## Additional Material
@@ -233,3 +369,7 @@ git log
 - [Becoming a Git Pro](https://itnext.io/become-a-git-pro-in-just-one-blog-a-thorough-guide-to-git-architecture-and-command-line-interface-93fbe9bdb395)
 
 - [A Simple Git Guide](https://rogerdudler.github.io/git-guide/)
+
+```
+
+```
