@@ -13,6 +13,7 @@ Check out the Table of Contents below to simply look for descriptions and explan
 - [Git Principles](#git-principles)
 - [Git Commands](#git-commands)
 - [Tutorial](#tutorial)
+- [Additional Material](#additional-material)
 
 ## What is Git?
 
@@ -85,6 +86,19 @@ This is the state that determines all of the changes that will be included in th
 Committed files are a grouping of changes applied and associated with a message that explains the intent of the changes. You can think of a commit as a building block. Each commit gets stacked on top of all of the previous commits to build the current version of the project. These commits can be used to revert to old versions and look back to changes made in the past.
 
 ## Git Commands
+
+- [git clone](#git-clone)
+- [git init](#git-init)
+- [git status](#git-status)
+- [git add](#git-add)
+- [git commit](#git-commit)
+- [git remote add](#git-remote-add)
+- [git pull](#git-pull)
+- [git push](#git-push)
+- [git branch](#git-branch)
+- [git checkout](#git-checkout)
+- [git merge](#git-merge)
+- [git log](#git-log)
 
 ### git clone
 
@@ -218,149 +232,189 @@ git log
 
 ## Tutorial
 
-### Clone this repo
+### Overview
+
+In this tutorial, we are going to:
+
+- Initialize a git repository
+- Setup a remote repository on Github
+- Create and work on a branch
+- Merge that branch to master
+- And push to Github
+
+### Setup
+
+If you have not already, please follow the instructions [here](#setting-git-up)!
+
+### Step 1: Clone the repo
+
+- We are going to clone this repo, so that we can copy all of the code in this Github repository
+  - Make sure that change into a directory where you want to keep these files
 
 ```
-
 > git clone https://github.com/zpinto/learn-git-with-hack.git
-
 ```
 
-### Make your own repo
+<img src='http://g.recordit.co/TKYLmwZlul.gif' title='Clone Repo' width='' alt='Clone Repo' />
 
-- Rename the directory and remove the .git directory inside your new project
+### Step 2: Remove the .git directory
+
+- We are going remove the .git directory from inside the repo, so we can go through the motions of initializing this project to be a git repository (pretending that you wrote all this code from scratch)
+
+  - The .git directory holds all the data about all of the commits that I made and the remote location of my Github repository
+  - We want this to be your repository, so execute the commands below
+
+- If you have not yet, change into the cloned directory
 
 ```
+> cd learn-git-with-hack
+```
 
-> mv learn-git-with-hack <learn-git-yourname>
-> cd <learn-git-yourname>
+- Remove the .git directory with the following command
+
+```
 > rm -rf .git
-
 ```
 
-- Initialize your new git repository
+<img src='http://g.recordit.co/qK1ZoKvri6.gif' title='Remove .git' width='' alt='Remove .git' />
+
+### Step 3: Initialize your git repository
+
+- We are now going to initialize a new git repository, as if we were just starting our project
+  - Make sure that you are in the project directory
 
 ```
-
 > git init
-
 ```
 
-## Important Commands
+- Now we have a clean git repository that is ready to track our changes
 
-### Status
+<img src='http://g.recordit.co/DMmge4PWgu.gif' title='Initialize git' width='' alt='Initialize git' />
 
-- Gives you information about what files are staged and which ones are not
+### Step 4: Add and commit the current files in the project
+
+- Because we created a new git repository, none of the files are being tracked yet
+  - We can check the status to verify this
 
 ```
-
 > git status
-
 ```
 
-### Staging
-
-- You must stage your files in order to commit and save changes
+- Let's add the files, moving them from the [modified state](#modified) to the [staging state](#staging)
 
 ```
-
-> git add <file_name>
-
+> git add .
 ```
 
-### Committing
-
-- Adds the latest changes that are staged to the source code
-- Allows you to save a snapshot of the changes that you made
+- Now that we have added the files, they are in the staging state
+- Let's move our files from the staging state to the [committed state](#committed)
 
 ```
-
-> git commit -m “my commit message”
-
+> git commit -m "initial commit"
 ```
 
-### Setting Remote Origin
+- Yay! We committed our first changes
 
-- Make a GitHub repo with you GitHub account
-- Set your local repositories remote origin
+<img src='http://g.recordit.co/mPlH2UrMO9.gif' title='Add and commit' width='' alt='Initialize git' />
 
-#### Sets your repos remote origin
+### Step 5: Setting up a remote Github repository
 
-```
+- We want to make our code available in a remote repository on Github
+- Let's create a Github repo for our remote location
 
-> git remote add origin <url-of-your-repo>
+<img src='http://g.recordit.co/APqzFouYUX.gif' title='Create Github repo' width='' alt='Create Github repo' />
 
-```
-
-#### Pushes your commits from local master to remote master
+- Now we need to set the remote location in our git repository and push it to Github
 
 ```
-
+> git remote add origin <github_repo_url>
 > git push -u origin master
-
 ```
 
-### Pushing
+- Yay! Our code is on Github
 
-- Pushes code to the remote repository
+<img src='http://g.recordit.co/H3ZDn1fzRo.gif' title='Push to remote' width='' alt='Push to remote' />
 
-```
+### Step 6: Creating and checking out to a branch
 
-git push
+- Now that we have our remote repository set up, we want to add a feature to our project
+- The feature we are going to add is the solution to problem 1
 
-```
-
-### Pulling
-
-- Pulls any new changes from your repository
-
-```
-
-git pull
+- We want to create a new [branch](#branching) so that we can add this feature without interfering with any other changes that our potential team members may be [merging](#merging) to the master branch(typically the production branch)
+  - It is bad practice to work on the master branch, so it is important to create a new branch when working on a feature
+  - Remember that we want to create a branch based off of master, so we need to be on the master branch when we create the branch
 
 ```
-
-### Branching
-
-#### Creating a branch
-
-- Creates a new branch based off of the latest commit of the branch that you are branching from
-
+> git branch <new_branch_name>
 ```
 
-git branch <my_branch_name>
+- Now let's checkout to that branch and start working
 
 ```
-
-#### Checking out that branch
-
-- Switches you to the branch that you select
-
+> git checkout <created_branch's_name>
 ```
 
-git checkout <my_branch_name>
+- Now that we are on the new feature's branch, let's change into the problems directory so we can work on the solution
 
 ```
-
-### Merging
-
-- Merges the selected branch onto the one that you are currently on
-
+> cd problems
+> cd problem 1
 ```
 
-git merge <my_branch_name>
+- Open question1.txt file and read the question
+- Code your solution in the file named answer1.py
+  - You can do this part yourself!
+- Run tester1.py to check your answer
 
 ```
-
-### Logs
-
-- Log of all of the commits, merges, etc.
-
+python3 tester1.py
 ```
 
-git log
+<img src='http://g.recordit.co/Cj1dHs5OuA.gif' title='Answer the question' width='' alt='Answer the question' />
+
+### Step 7: Making commits on that branch
+
+- Now that you have made changes to the answer1.py file, we need to add and commit those changes to the branch
 
 ```
+> git add .
+> git commit -m "solve problem1"
+```
+
+- Yay! We committed the solution to our feature's branch
+
+<img src='http://g.recordit.co/hMC2s2ShM4.gif' title='Commit feature' width='' alt='Commit feature' />
+
+### Step 8: Merging that branch and pushing to remote
+
+- Now that we have a working feature on our branch, it is time to [merge](#merging) it to the master branch where all of our production code is
+
+- We need to checkout to the master branch and merge our feature's branch
+- Note: Always remember to pull before making any changes to master! On of your team members may have made changes since the last time you pulled
+
+```
+> git checkout master
+> git pull
+> git merge <created_branch's_name>
+```
+
+- Yay! Now our changes on the feature's branch have been applied to master
+- Now let's push it to our remote repository on Github so our potential team members can see the changes as well
+
+```
+> git push
+```
+
+- Yay! It is on Github!
+- To make sure that you have the flow mastered, I would recommend repeating these steps with problem2 as well.
+
+<img src='http://g.recordit.co/s1W77KYW1X.gif' title='Merge and push' width='' alt='Merge and push' />
+
+### We did it!!!
+
+There is much more to learn about git, but you should now have a better understanding of some of the most popular and useful aspects of git.
+
+Now you can use git in your projects to collaborate and keep track of your projects progression.
 
 ## Additional Material
 
@@ -369,7 +423,3 @@ git log
 - [Becoming a Git Pro](https://itnext.io/become-a-git-pro-in-just-one-blog-a-thorough-guide-to-git-architecture-and-command-line-interface-93fbe9bdb395)
 
 - [A Simple Git Guide](https://rogerdudler.github.io/git-guide/)
-
-```
-
-```
