@@ -1,8 +1,8 @@
 # learn-git-with-hack
 
-## Workshop Video
+## Virtual Workshop Recording
 
-https://youtu.be/97rg_UDGkFE
+[Youtube](https://youtu.be/97rg_UDGkFE) | [Slides](https://docs.google.com/presentation/d/1Sp5AcPmvgugNbaegud_o0Wa9Q4BktUFj2zaG46Pj9W8/edit?usp=sharing)
 
 ## Overview
 
