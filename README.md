@@ -2,7 +2,7 @@
 
 ## Workshop Video
 
-https://www.youtube.com/watch?v=97rg_UDGkFE&t=2161s
+https://youtu.be/97rg_UDGkFE
 
 ## Overview
 
