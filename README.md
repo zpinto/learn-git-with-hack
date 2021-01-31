@@ -1,5 +1,9 @@
 # learn-git-with-hack
 
+## Workshop Video
+
+https://www.youtube.com/watch?v=97rg_UDGkFE&t=2161s
+
 ## Overview
 
 This repo provides a description of several common git commands. It also includes a tutorial that will offer you the opportunity to put your git skills to the test.
